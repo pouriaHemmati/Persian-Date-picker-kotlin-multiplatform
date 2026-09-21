@@ -1,5 +1,6 @@
 package io.github.faridsolgi.date_picker.view
 
+
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -13,10 +14,10 @@ import androidx.compose.ui.unit.dp
 import io.github.faridsolgi.domain.SelectableDates
 import io.github.faridsolgi.domain.model.DisplayMode
 import io.github.faridsolgi.domain.model.PersianDatePickerColors
-import io.github.faridsolgi.library.generated.resources.dateInputHeadline
-import io.github.faridsolgi.library.generated.resources.datePickerHeadline
 import io.github.faridsolgi.library.generated.resources.Res
+import io.github.faridsolgi.library.generated.resources.dateInputHeadline
 import io.github.faridsolgi.library.generated.resources.dateInputTitle
+import io.github.faridsolgi.library.generated.resources.datePickerHeadline
 import io.github.faridsolgi.library.generated.resources.datePickerTitle
 import io.github.faridsolgi.persiandatetime.domain.PersianDateTime
 import io.github.faridsolgi.persiandatetime.extensions.format
@@ -88,6 +89,19 @@ object PersianDatePickerDefaults {
             DisplayMode.Companion.Input ->
                 Text(text = stringResource(Res.string.dateInputTitle), modifier = modifier)
         }
+    }
+
+    @Composable
+    fun typography(): PersianDatePickerTypography {
+        val typography = MaterialTheme.typography
+
+        return PersianDatePickerTypography(
+            title = typography.titleLarge,
+            headline = typography.bodyLarge,
+            day = typography.labelLarge,
+            weekday = typography.labelMedium,
+            button = typography.labelLarge
+        )
     }
 
     @OptIn(ExperimentalTime::class)

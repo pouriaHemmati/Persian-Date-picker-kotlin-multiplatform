@@ -1,0 +1,18 @@
+package io.github.faridsolgi.date_picker.view
+
+
+object PersianDatePickerDefaults {
+
+    @Composable
+    fun typography(): PersianDatePickerTypography {
+        val typography = MaterialTheme.typography
+
+        return PersianDatePickerTypography(
+            title = typography.titleLarge,
+            headline = typography.bodyLarge,
+            day = typography.labelLarge,
+            weekday = typography.labelMedium,
+            button = typography.labelLarge
+        )
+    }
+}
