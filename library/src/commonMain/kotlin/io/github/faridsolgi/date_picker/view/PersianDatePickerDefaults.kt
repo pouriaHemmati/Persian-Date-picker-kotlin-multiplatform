@@ -4,9 +4,7 @@ package io.github.faridsolgi.date_picker.view
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -24,9 +22,6 @@ import io.github.faridsolgi.persiandatetime.extensions.format
 import org.jetbrains.compose.resources.stringResource
 import kotlin.time.ExperimentalTime
 
-val LocalPersianDatePickerTypography = staticCompositionLocalOf {
-    Typography() // Fallback default
-}
 object PersianDatePickerDefaults {
     val YearRange = IntRange(1300, 1499)
 
@@ -80,13 +75,13 @@ object PersianDatePickerDefaults {
     @Composable
     fun DatePickerTitle(displayMode: DisplayMode, modifier: Modifier = Modifier) {
         when (displayMode) {
-            DisplayMode.Companion.Picker ->
+            DisplayMode.Picker ->
                 Text(
                     text = stringResource(Res.string.datePickerTitle),
                     modifier = modifier
                 )
 
-            DisplayMode.Companion.Input ->
+            DisplayMode.Input ->
                 Text(text = stringResource(Res.string.dateInputTitle), modifier = modifier)
         }
     }
@@ -121,8 +116,8 @@ object PersianDatePickerDefaults {
                 year()
             }
                 ?: when (displayMode) {
-                    DisplayMode.Companion.Picker -> stringResource(Res.string.datePickerHeadline)
-                    DisplayMode.Companion.Input -> stringResource(Res.string.dateInputHeadline)
+                    DisplayMode.Picker -> stringResource(Res.string.datePickerHeadline)
+                    DisplayMode.Input -> stringResource(Res.string.dateInputHeadline)
                     else -> ""
                 }
 
